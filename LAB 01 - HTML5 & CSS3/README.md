@@ -1,4 +1,4 @@
-#Mục tiêu 
+# Mục tiêu 
 - Cài đặt Web server dùng Apache hỗ trợ ngôn ngữ PHP
 - Hiểu biết ngôn ngữ HTML (HyperText Markup Language) và cấu trúc cơ bản của một tài liệu HTML.
 - Hiểu biết và sử dụng một số phần tử HTML/HTML5 cơ bản.
