@@ -1,0 +1,42 @@
+body{
+    background-color: grey;
+}
+div{
+    padding-left: 7px;
+    passding-right: 7px;
+}
+a{
+    color:blue; 
+}
+.option{
+    padding-right: 15px;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    align-content:start;
+    grid-template-rows: 50px auto auto auto;
+    grid-template-columns: 520px 230px;
+}
+.item1{
+    background-color: lightgrey;
+    grid-column: 1/3;
+    vertical-align: middle;
+}
+.item2 {
+    background-color: sandybrown;
+    grid-column: 1/3;
+    height: 30px;
+    vertical-align: ;
+}
+.item3{
+    background-color: darkseagreen;
+}
+.item4{
+    background-color: cornflowerblue;
+}
+.item5 {
+    background-color: lemonchiffon;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
