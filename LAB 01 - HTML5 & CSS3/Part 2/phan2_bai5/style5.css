@@ -1,0 +1,126 @@
+* {
+    margin: 0px;
+}
+body {
+    background: #E8F7FA url("./images03/bg-body.png") no-repeat center top;
+    background-attachment: fixed;
+    font-size: 12px;
+}
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 120px 30px auto auto 100px;
+    grid-template-columns: 500px 200px;
+}
+.grid-item {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+}
+.header {
+    background: url("./images03/bg-header.jpg") no-repeat center top;
+    background-size: 100% 100%;
+    grid-area: 1/1/2/3;
+    align-items: center;
+    color: #a09c9c;
+    padding-left: 30px;
+}
+.menu {
+    background: url("./images03/bg-menu.png") no-repeat center top;
+    background-size: 100% 100%;
+    grid-area: 2/1/3/3;
+    align-items: center;
+    column-gap: 30px;
+    padding-left: 30px;
+}
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.menu a:hover {
+    height: 30px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background: url("./images03/bg-menu-hover.png") no-repeat center top;
+    background-size: 100% 100%;
+}
+.artical1 {
+    grid-area: 3/1/4/2;
+}
+.artical1 img {
+    width: 95%;
+}
+.artical2 {
+    grid-area: 4/1/5/2;
+    padding: 10px;
+    min-height: 240px;
+    flex-direction: column;
+}
+#title {
+    color: #BFC835;
+}
+#date {
+    color: #a09c9c;
+}
+.artical2 p {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: justify;
+    line-height: 1.75em;
+}
+#comment img {
+    vertical-align: middle;
+}
+#comment a {
+    color: #98D3E4;
+    text-decoration: none;
+}
+.aside {
+    grid-area: 3/2/5/3;
+    flex-direction: column;
+    align-items: center;
+}
+.aside > * {
+    height: 25px;
+    width: 90%;
+    display: flex;        
+    align-items: center;
+    background-color: #EFEFEF;
+    padding-left: 5px;
+}
+.aside .button {
+    background: url("./images03/button-feed.png"), url("./images03/bg-feed.gif"), #EFEFEF;
+    background-repeat: no-repeat;
+    background-position: 40px 0px, center;
+    background-size: auto, 150px 25px;
+    text-align: center;
+}
+.aside .button:hover {
+    background-position: 40px -25px,center;
+}
+.aside .link {
+    background-color: #EFEFEF;
+    text-decoration: none;
+    color: #000000;
+    border-width: 1px;
+    border-color: #c0c0c0;
+    border-bottom-style:  solid; 
+}
+.aside .bottom {
+    background: url("./images03/bg-sidebar-bottom.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.footer {
+    background: url("./images03/bg-footer.jpg") no-repeat center top;
+    background-size: 100% 100%;
+    grid-area: 5/1/6/3;
+    color: #ffffff;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+
