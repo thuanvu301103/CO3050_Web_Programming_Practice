@@ -1,0 +1,52 @@
+.navbar-brand {
+    font-family: 'Brush Script MT';
+    font-size: 2rem;
+}
+.card-img-top{
+    height: 100%;
+    object-fit: cover;
+}
+.card {
+    height: 100%;
+}
+.sidebar .nav-link:hover{
+    padding-left: 2rem;
+    background-color: #127c81;
+    color: #ffffff;
+}
+.ad {
+    width: 160px;
+    height: 600px;
+}
+#adbanner{
+    width: 160px;
+    height: 600px;
+    object-fit: cover;
+}
+footer i {
+    margin-right: 2rem;
+}
+footer .nav-link {
+    
+}
+@media only screen and (max-width : 768px) {
+    .ad {
+        width: 100%;
+        height: 160px;
+    }
+
+    #adbanner {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    .ad {
+        display: none;
+    }
+    #adbanner {
+        display: none;
+    }
+}
