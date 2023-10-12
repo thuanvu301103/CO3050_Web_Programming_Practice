@@ -1,1 +1,2 @@
-
+- Instead of creating a brand-new ```CSS file```, you can use ```Bootstrap``` - a popular CSS framework
+- By using ```MediaQueries```, you can create a RWD web-interface
