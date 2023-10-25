@@ -226,6 +226,11 @@ footer .info {
     text-align: center;
     padding-bottom: 2rem;
 }
+footer img {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+}
 /*---------------------*/
 /* Small Devices, Tablets */
 /*---------------------*/
