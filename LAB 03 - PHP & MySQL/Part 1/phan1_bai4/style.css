@@ -1,0 +1,19 @@
+table, td {
+    margin: auto;
+    border: 1px solid;
+}
+
+td {
+    text-align: center;
+    padding: 12px;
+    width: 2rem;
+    height: 1rem;
+}
+
+tr {
+    background-color: yellow;
+}
+
+table {
+    border-collapse: collapse;
+}
