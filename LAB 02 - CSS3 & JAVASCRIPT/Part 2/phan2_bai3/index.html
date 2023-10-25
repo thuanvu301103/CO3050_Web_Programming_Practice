@@ -17,7 +17,7 @@
             <div class="text-danger border-top decoration-italic">Items marked * are must required items</div>
         </header>
 
-        <form id="sign-up">
+        <form id="sign-up" onsubmit="submit()">
             <div class="bg-white rounded-2 my-2 p-4">
                 <h6 class="border-bottom pb-2">Name <span class="text-danger">*</span></h6>
                 <div class="input-group my-3">
@@ -164,7 +164,7 @@
        
         <footer class="d-flex flex-column mt-3 mb-3">
             <div class="d-flex flex-row justify-content-between">
-                <button type="button" id="submit-button"
+                <button type="submit" id="submit-button"
                         class="btn btn-light text-primary fw-bold text-center border-bottom-2"
                         onclick="submit()">
                     Submit
