@@ -127,7 +127,9 @@
             </div>
         </div>
     </div>
-       
+    <?php
+        mysqli_close($DBConnect);
+	?>
     <!-- Footer section -->
     <footer>
         <div class="flex-column">

@@ -182,7 +182,9 @@
                         </ul>
                     </nav>
                 </div>
-
+                <?php
+		            mysqli_close($DBConnect);
+	            ?>
                 <!-- Advertisement banner-->
                 <div class="col-lg-2 container ad px-0 m-0">
                     <img src="./img/adbanner.jpg" alt="Quảng cáo" id="adbanner">
@@ -218,9 +220,6 @@
         <div class="text-secondary text-center">@2023 By Vu Ngoc Thuan</div>
         </div>
     </footer>
-    <?php
-		mysqli_close($DBConnect);
-	?>
 
 </body>
 </html>
