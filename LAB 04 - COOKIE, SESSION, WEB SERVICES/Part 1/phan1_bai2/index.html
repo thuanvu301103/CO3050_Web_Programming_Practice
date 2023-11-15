@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Manage Cookies</title>
+</head>
+<body class="container-fluid bg-dark">
+    <div class="container-fluid">
+        <div class="d-flex flex-row p-4">
+            <button onclick=listC() class="btn btn-primary">View all cookies</button>
+            <button onclick="formaddC('', '')" class="btn btn-success">Add cookie</button>
+        </div>
+        <!--Data-->
+        <div id="body" class="d-flex flex-row justify-content-center p-4">
+        </div>
+           
+    </div>
+    <script>
+        const formaddC = (name, value) => {
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+            var form = document.createElement("form");
+            form.style = "width: 75%;";
+            body.appendChild(form);
+            var para = ["name", "value", "expire", "path", "domain", "secure"];
+            for (var param in para) {
+                var div = document.createElement("div");
+                div.classList.add("input-group", "my-3");
+                var label = document.createElement("span");
+                label.classList.add("input-group-text");
+                label.style = "width: 25%;";
+                label.for = para[param];
+                label.innerHTML = "Cookie " + para[param] + ": ";
+                var input = document.createElement("input");
+                input.classList.add("form-control");
+                input.type = "text";
+                input.name = para[param];
+                if (para[param] == "name") { input.value = name; }
+                if (para[param] == "value") { input.value = value; }
+                input.style = "width: 50%;";
+                div.appendChild(label);
+                div.appendChild(input);
+                form.appendChild(div);
+            }
+            var submit = document.createElement("button");
+            submit.onclick = addC;
+            submit.classList.add("btn", "btn-success");
+            submit.innerHTML = "Submit";
+            form.appendChild(submit);
+            
+        }
+  
+        const addC = () => {
+            const name = document.getElementsByName("name")[0].value;
+            
+            const value = document.getElementsByName("value")[0].value;
+            const expire = document.getElementsByName("expire")[0].value;
+            const path = document.getElementsByName("path")[0].value;
+            const domain = document.getElementsByName("domain")[0].value;
+            const secure = document.getElementsByName("secure")[0].value;
+          
+            if (!name || !value) {
+                alert("Please fill in Cookie name and Cookie value");
+                formaddC();
+            }
+                else {
+
+                    var Cookie = name + "=" + value;
+                    if (expire) {
+                        const d = new Date();
+                        d.setTime(d.getTime() + expire * 24 * 60 * 60 * 1000);
+                        let expires = "expires=" + d.toUTCString();
+                        Cookie += "; " + expires;
+                    }
+                    if (domain) { Cookie += "; domain=" + domain; }
+                    if (!path) { Cookie += "; path=/"; }
+                    else { Cookie += "; path=" + path; }
+                    if (secure) { Cookie += "; " + secure; }
+
+
+                    document.cookie = Cookie;
+                    alert("Adding Cookie's completed!");
+                }
+        };
+
+        const listC = () => {
+            var allCookies = document.cookie;
+            var cookieArray = allCookies.split(";");
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+            var table = document.createElement("table");
+            table.classList.add("table", "table-bordered", "table-striped");
+            var thead = document.createElement("thead");
+            var tr = document.createElement("tr");
+            var col = ["Name", "Value", "Action"];
+            for (var i in col) {
+                var th = document.createElement("th");
+                th.classList.add("text-center");
+                th.innerHTML = col[i];
+                tr.appendChild(th);
+            }
+            thead.appendChild(tr)
+            table.appendChild(thead);
+            
+            var tbody = document.createElement("tbody");
+            if (cookieArray.length == 0) {
+                var tr = document.createElement("tr");
+                var td = document.createElement("td");
+                td.setAttribute("colspan", "3");
+                td.classList.add("text-center");
+                td.innerHTML = "No cookie is found";
+                tr.appendChild(td);
+                tbody.appendChild(tr);
+            }
+            else {
+                // Loop through the array
+                
+                for (var i = 0; i < cookieArray.length; i++) {
+                    // Get the name and value of each cookie
+                    var cookiePair = cookieArray[i].split("=");
+                    var cookieName = cookiePair[0].trim();
+                    var cookieValue = cookiePair[1];
+                    var tr = document.createElement("tr");
+                    var td = document.createElement("td");
+                    td.classList.add("text-center");
+                    td.innerHTML = cookieName;
+                    tr.appendChild(td);
+                    
+                    td = document.createElement("td");
+                    td.classList.add("text-center");
+                    td.innerHTML = cookieValue;
+                    tr.appendChild(td);
+                    td = document.createElement("td");
+                    td.classList.add("text-center");
+
+                    var btn = document.createElement("button");
+                    btn.setAttribute("onclick", "editC('" + cookieName + "','" + cookieValue + "') ");
+                    btn.classList.add("btn", "btn-warning");
+
+                    btn.innerHTML = "Edit";
+                    td.appendChild(btn);
+                    
+                    btn = document.createElement("button");
+                    btn.setAttribute("onclick", "deleteC('" + cookieName + "')");
+                    btn.classList.add("btn", "btn-danger");
+                    btn.innerHTML = "Delete";
+                    td.appendChild(btn);
+                    tr.appendChild(td);
+                    tbody.appendChild(tr);
+
+                }
+            }
+            
+            table.appendChild(tbody);
+            body.appendChild(table);
+        };
+
+        const editC = (name, value) => {
+            formaddC(name, value);
+        };
+
+        const deleteC = (name) => {
+           
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+            alert("Delete completed!");
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+        };
+
+    </script>
+    
+</body>
+</html>
