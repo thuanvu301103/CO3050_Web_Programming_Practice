@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- custom CSS -->
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- our app will be injected here -->
+    <div class="container-fluid" id="app">
+        <div class="d-flex flex-row p-4">
+            <h1 id="page-title" class="text-uppercase"> manage products </h1>
+        </div>
+        <div id="navbtn" class="d-flex flex-row px-4">
+            <button id="read-products" role="button" class="btn btn-primary rounded-2">
+                <i class="fa fa-list"></i> Read Products
+            </button>
+            <button id="add-product" role="button" class="btn btn-success rounded-2 mx-2">
+                <i class="fa fa-plus"></i> Add New Product
+            </button>
+        </div>
+        <!--Data Table-->
+        <div class="row p-4" id="page-content">
+        </div>
+    </div>
+
+
+
+    <!-- bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!-- bootbox for confirm pop up -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+    <!-- products database manipulation scripts -->
+    <script src="view/read_products.js"></script>
+    <script src="view/add_product.js"></script>
+    <script src="view/update_product.js"></script>
+    <script src="view/delete_product.js"></script>
+</body>
+</html>
